@@ -16,6 +16,19 @@ int main()
 
     // 0.25
     fixed_t e = c / 10;
+
+    // convert int to fixed
+    fixed_t f = 3 << 16;
+    // convert fixed to int
+    fixed_t g = f >> 16;
+
+    // 9
+    fixed_t prod = FixedMul(f, f);
+}
+
+fixed_t FixedMul(fixed_t a, fixed_t b)
+{
+    fixed_t product = ((long long)a * (long long)b) >> FRACBITS;
 }
 
 fixed_t ConvertToFixed(float num)

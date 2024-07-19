@@ -20,10 +20,21 @@ int main()
     // convert int to fixed
     fixed_t f = 3 << 16;
     // convert fixed to int
-    fixed_t g = f >> 16;
+    int g = f >> 16;
 
     // 9
     fixed_t prod = FixedMul(f, f);
+
+
+    fixed_t num = ConvertToFixed(4.25);
+    // multiply by two
+    fixed_t numTwice = num << 1;
+
+    // losing precision 
+    int numDec = numTwice >> 16;
+    float eight = 8.5;
+
+
 }
 
 fixed_t FixedMul(fixed_t a, fixed_t b)
